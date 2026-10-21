@@ -1,5 +1,5 @@
 /* Petal website. Release metadata lives in this one object: update it after each build. */
-const RELEASE = { version: "0.1.0", file: "downloads/Petal-0.1.0.dmg", size: "11 MB", sha256: "f1b59a24898d6bc995dda921965290bd84d67aad8d69d8eeab4b88cf3575f1fe", requires: "macOS 15 or later · Apple silicon", notarized: false };
+const RELEASE = { version: "0.1.0", file: "https://github.com/LucaLivigni/Petal/releases/download/v0.1.0/Petal-0.1.0.dmg", size: "11 MB", sha256: "f1b59a24898d6bc995dda921965290bd84d67aad8d69d8eeab4b88cf3575f1fe", requires: "macOS 15 or later · Apple silicon", notarized: false };
 
 (() => {
   "use strict";

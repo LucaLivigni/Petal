@@ -104,16 +104,25 @@ Debug builds also accept `--demo [--tools|--actions]` (an animated wheel), `--on
 tools/release.sh
 ```
 
-builds a Release app, signs the bundled programs and the app with the hardened runtime, makes `Petal-<version>.dmg`, and
-updates the website's download section with its size and SHA-256. With a *Developer ID Application* certificate and a
+builds a Release app, signs the bundled programs and the app with the hardened runtime, and makes `Petal-<version>.dmg`
+(and stamps its size and SHA-256 into the website). With a *Developer ID Application* certificate and a
 notarytool profile (`PETAL_NOTARY_PROFILE=…`) it also notarizes and staples the DMG; without them the DMG works, but macOS
 shows "can't verify the developer" on the first launch (System Settings → Privacy & Security → Open Anyway).
+
+To publish the DMG, which the website's Download button links to:
+
+```bash
+tools/publish-release.sh build-release/Petal-0.1.0.dmg 0.1.0   # add --notarized for a notarized build
+```
+
+It commits the stamped website and creates the GitHub Release `v0.1.0` with the DMG attached (needs the `gh` CLI).
 
 ## Website
 
 `website/` is a static site: `index.html`, `privacy.html`, `licenses.html`. Preview it with
 `cd website && python3 -m http.server 8766`. Release metadata lives in the `RELEASE` object at the top of `website/app.js`,
-which `tools/stamp-site.py` rewrites. Host the folder on any static host; put the DMG in `website/downloads/`.
+which `tools/stamp-site.py` rewrites. It is deployed to GitHub Pages by `.github/workflows/pages.yml` on every push to `main` that touches `website/`
+(<https://lucalivigni.github.io/Petal/>); the DMG is not in the site, the Download button points at the GitHub Release asset.
 
 ## License
 
