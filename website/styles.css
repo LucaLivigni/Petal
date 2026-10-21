@@ -160,6 +160,11 @@ code, kbd { font-family: var(--mono); font-size: .88em; }
 .btn-primary { background: var(--a); color: var(--a-ink); }
 .btn-primary:hover { background: color-mix(in srgb, var(--a) 90%, var(--ink)); }
 .btn:active { transform: scale(.97); }
+.btn-ghost { gap: 8px; margin-left: 10px; background: color-mix(in srgb, var(--ink) 7%, transparent); color: var(--ink); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--ink) 12%, transparent); }
+.star-link { color: var(--a-text); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; min-height: 44px; border-radius: 8px; }
+.star-link:hover .star-ico path { fill: currentColor; }
+.star-ico path { transition: fill .2s ease; }
 .btn-sm { min-height: 36px; padding: 0 16px; font-size: .875rem; }
 .link-more { color: var(--a-text); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; min-height: 44px; border-radius: 8px; }
 .link-more::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 2px 2px 0 0; transform: rotate(45deg) translate(-1px, 1px); transition: transform .2s ease; }
@@ -861,3 +866,5 @@ kbd { display: inline-block; min-width: 1.7em; padding: .05em .4em; text-align: 
   .coach .ck-cap::after, .dock .ck-cap::after { animation: none !important; }
   .sc-key.nudge { animation-duration: .5s; transform: none; }
 }
+
+@media (max-width: 480px) { .btn-ghost { margin: 10px 0 0; } }
