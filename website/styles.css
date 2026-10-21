@@ -160,11 +160,22 @@ code, kbd { font-family: var(--mono); font-size: .88em; }
 .btn-primary { background: var(--a); color: var(--a-ink); }
 .btn-primary:hover { background: color-mix(in srgb, var(--a) 90%, var(--ink)); }
 .btn:active { transform: scale(.97); }
-.btn-ghost { gap: 8px; margin-left: 10px; background: color-mix(in srgb, var(--ink) 7%, transparent); color: var(--ink); }
-.btn-ghost:hover { background: color-mix(in srgb, var(--ink) 12%, transparent); }
-.star-link { color: var(--a-text); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; min-height: 44px; border-radius: 8px; }
-.star-link:hover .star-ico path { fill: currentColor; }
-.star-ico path { transition: fill .2s ease; }
+.btn-star {
+  gap: 10px; padding: 0 22px 0 20px;
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent);
+  color: var(--ink);
+  transition: transform .12s ease-out, background-color .2s ease, box-shadow .2s ease;
+}
+.btn-star:hover { background: color-mix(in srgb, var(--ink) 13%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--a) 55%, transparent); }
+.btn-star .gh-ico { flex: none; }
+.btn-star .star-ico { flex: none; margin-left: 2px; padding-left: 12px; box-sizing: content-box; border-left: 1px solid color-mix(in srgb, var(--ink) 16%, transparent); }
+.btn-star .star-ico path { fill: none; stroke: var(--a-text); stroke-width: 1.8; stroke-linejoin: round; transition: fill .2s ease, transform .35s cubic-bezier(.34, 1.56, .64, 1); transform-origin: 12px 12px; }
+.btn-star:hover .star-ico path { fill: var(--a); stroke: var(--a); transform: rotate(18deg) scale(1.12); }
+.btn-star:focus-visible { outline: 2px solid var(--a); outline-offset: 3px; }
+.dl-main .btn-star { margin-left: 10px; }
+@media (max-width: 520px) { .dl-main .btn-star { margin: 10px 0 0; } }
+@media (prefers-reduced-motion: reduce) { .btn-star .star-ico path { transition: fill .2s ease; transform: none !important; } }
 .btn-sm { min-height: 36px; padding: 0 16px; font-size: .875rem; }
 .link-more { color: var(--a-text); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; min-height: 44px; border-radius: 8px; }
 .link-more::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 2px 2px 0 0; transform: rotate(45deg) translate(-1px, 1px); transition: transform .2s ease; }
@@ -867,4 +878,3 @@ kbd { display: inline-block; min-width: 1.7em; padding: .05em .4em; text-align: 
   .sc-key.nudge { animation-duration: .5s; transform: none; }
 }
 
-@media (max-width: 480px) { .btn-ghost { margin: 10px 0 0; } }
