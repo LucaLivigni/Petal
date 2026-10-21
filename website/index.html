@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en" data-accent="tangerine">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Petal – Convert files by dragging them</title>
+  <meta name="description" content="Petal is a menu bar utility for Mac. Drag a file, tap a key, and drop it on a wheel that opens under your cursor to convert, compress or send it. Everything runs on your Mac.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Petal – Convert files by dragging them">
+  <meta property="og:description" content="A menu bar utility for Mac. Drag a file, tap a key, drop it on a wedge. Nothing is uploaded.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd7a1"/><stop offset=".55" stop-color="#ff9f57"/><stop offset="1" stop-color="#ff7a3d"/></linearGradient>
+      <linearGradient id="g-vid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a4668"/><stop offset="1" stop-color="#171b2c"/></linearGradient>
+      <linearGradient id="g-aud" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6fae"/><stop offset="1" stop-color="#7a4ee0"/></linearGradient>
+      <linearGradient id="g-fold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fcbff"/><stop offset="1" stop-color="#3b97f0"/></linearGradient>
+      <clipPath id="c-photo"><rect x="7.5" y="14.5" width="49" height="35" rx="3"/></clipPath>
+      <linearGradient id="ap-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6cc0ff"/><stop offset="1" stop-color="#2f7fe8"/></linearGradient>
+      <linearGradient id="ap-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ad0ff"/><stop offset="1" stop-color="#3a8cf0"/></linearGradient>
+      <linearGradient id="ap-teal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fe0d0"/><stop offset="1" stop-color="#2d8fe0"/></linearGradient>
+      <linearGradient id="ap-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9aa3b8"/><stop offset="1" stop-color="#5d667c"/></linearGradient>
+      <pattern id="p-check" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#f3f4f7"/><rect width="4" height="4" fill="#dfe2e8"/><rect x="4" y="4" width="4" height="4" fill="#dfe2e8"/></pattern>
+    </defs>
+  </svg>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="top-sentinel" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Petal, back to top">
+        <img src="assets/icon.svg" width="26" height="26" alt="">
+        <span>Petal</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#wheels">Wheels</a></li>
+          <li><a href="#formats">Formats</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="downloads/Petal-0.1.0.dmg" data-download download>Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <img class="hero-icon" src="assets/icon.png" width="132" height="132" alt="The Petal app icon: eight white petals on an orange tile">
+        <h1 id="hero-title"><span>Drag a file.</span> <span>Tap a key.</span> <span>Drop it on a wedge.</span></h1>
+        <p class="lede">Petal is a menu bar utility for Mac that converts, compresses and sends files from a wheel that opens right under your cursor. Everything runs on your Mac.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="downloads/Petal-0.1.0.dmg" data-download download>Download for Mac</a>
+          <a class="link-more" href="#demo">Try the wheel</a>
+        </div>
+        <p class="fine" data-release="label">Version 0.1.0 · macOS 15 or later · Apple silicon</p>
+      </div>
+    </section>
+
+    <section class="section section-demo" id="demo" aria-labelledby="demo-title">
+      <div class="wrap demo">
+        <div class="head">
+          <h2 id="demo-title">Try it on a real desktop.</h2>
+          <p class="sub">A simulated Mac with sample files. Nothing is uploaded and nothing is converted for real, but it behaves like the app: drag, tap a key, drop.</p>
+        </div>
+
+        <div class="scenario" id="scenario" aria-labelledby="sc-title">
+          <div class="sc-intro">
+            <h3 id="sc-title">Try this</h3>
+            <p class="sc-case">Your client wants the holiday photo as a JPG, under 2&nbsp;MB.</p>
+          </div>
+          <ol class="checklist" id="checklist">
+            <li data-step="1"><span class="tick" aria-hidden="true"></span><span class="sc-text">Drag <b>holiday.heic</b>, tap <kbd class="sc-key">⇧</kbd>, drop it on <b>JPG</b>.<span class="sc-detail"></span></span></li>
+            <li data-step="2"><span class="tick" aria-hidden="true"></span><span class="sc-text">Drag the new JPG onto the <b>Mail</b> window.<span class="sc-detail"></span></span></li>
+            <li data-step="3"><span class="tick" aria-hidden="true"></span><span class="sc-text">Drag <b>weekend.mov</b>, tap <kbd class="sc-key">⌘</kbd>, drop it on <b>Compress</b> to send it too.<span class="sc-detail"></span></span></li>
+          </ol>
+          <div class="sc-foot">
+            <p class="sc-free">Free play: every file on the desktop is draggable. <button class="text-btn" type="button" data-reset>Reset desktop</button></p>
+            <p class="sc-success" aria-hidden="true">
+              <span class="sc-msg">That’s Petal: no app window, no upload.</span>
+              <a class="btn btn-primary btn-sm" href="downloads/Petal-0.1.0.dmg" data-download download tabindex="-1">Download</a>
+              <button class="text-btn" type="button" data-reset tabindex="-1">Try again</button>
+            </p>
+          </div>
+        </div>
+
+        <div class="screen" id="screen" role="group" aria-label="Simulated Mac desktop with sample files and a mail draft">
+          <div class="wall" aria-hidden="true">
+            <svg class="wall-art" viewBox="-100 -100 200 200" focusable="false">
+              <g fill="#fff" fill-opacity=".07">
+                <rect id="wa" x="-13" y="-92" width="26" height="56" rx="13"/>
+                <use href="#wa" transform="rotate(45)"/><use href="#wa" transform="rotate(90)"/><use href="#wa" transform="rotate(135)"/>
+                <use href="#wa" transform="rotate(180)"/><use href="#wa" transform="rotate(225)"/><use href="#wa" transform="rotate(270)"/><use href="#wa" transform="rotate(315)"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="menubar" aria-hidden="true">
+            <span class="mb-left"><b>Finder</b><span>File</span><span>Edit</span><span class="mb-more">View</span><span class="mb-more">Go</span><span class="mb-more">Window</span></span>
+            <span class="mb-right">
+              <svg class="mb-petal" id="mb-petal" viewBox="-10 -10 20 20" focusable="false"><g fill="#fff"><rect id="mp" x="-1.7" y="-9" width="3.4" height="6" rx="1.7"/><use href="#mp" transform="rotate(45)"/><use href="#mp" transform="rotate(90)"/><use href="#mp" transform="rotate(135)"/><use href="#mp" transform="rotate(180)"/><use href="#mp" transform="rotate(225)"/><use href="#mp" transform="rotate(270)"/><use href="#mp" transform="rotate(315)"/></g></svg>
+              <svg class="mb-glyph" viewBox="0 0 20 16" focusable="false"><path d="M10 13.2l1.9-2.1a2.7 2.7 0 0 0-3.8 0zM5.6 8.6a6.2 6.2 0 0 1 8.8 0l1.3-1.4a8.2 8.2 0 0 0-11.4 0zM2.7 5.7a10.3 10.3 0 0 1 14.6 0L18.6 4.3a12.3 12.3 0 0 0-17.2 0z" fill="#fff"/></svg>
+              <svg class="mb-glyph" viewBox="0 0 26 14" focusable="false"><rect x=".5" y="1.5" width="21" height="11" rx="3.2" fill="none" stroke="#fff" stroke-opacity=".7"/><rect x="2.2" y="3.2" width="14" height="7.6" rx="1.8" fill="#fff"/><rect x="22.8" y="5" width="2" height="4" rx="1" fill="#fff" fill-opacity=".7"/></svg>
+              <span class="mb-clock">Tue 9:41</span>
+            </span>
+          </div>
+
+          <div class="files" id="files" role="group" aria-label="Files on the desktop"></div>
+
+          <div class="floats" id="floats" aria-label="Floating files"></div>
+
+          <div class="rubber" id="band" hidden></div>
+
+          <div class="wins" id="wins">
+            <section class="mail" id="mail" aria-label="Mail draft">
+              <header class="m-bar">
+                <span class="lights"><button class="tl tl-close" type="button" aria-label="Close Mail"></button><button class="tl tl-min" type="button" aria-label="Minimise Mail"></button><button class="tl tl-zoom" type="button" aria-label="Zoom Mail" tabindex="-1"></button></span>
+                <span class="m-head"><span class="m-title">Holiday photos</span><span class="m-sub" id="m-sub">New message</span></span>
+              </header>
+              <div class="m-fields">
+                <div class="m-row"><span class="m-k">To</span><span class="m-v">client@example.com</span></div>
+                <div class="m-row"><span class="m-k">Subject</span><span class="m-v">Holiday photos</span></div>
+              </div>
+              <div class="m-body"><p>Hi Anna,</p><p>Here are the photos from our trip.</p></div>
+              <div class="m-attach" id="m-drop">
+                <ul class="m-chips" id="m-chips" aria-label="Attachments"></ul>
+                <div class="m-zone">
+                  <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M13.6 6.2l-5.9 5.9a1.6 1.6 0 0 0 2.3 2.3l6-6a3.2 3.2 0 0 0-4.5-4.5l-6.2 6.2a4.8 4.8 0 0 0 6.8 6.8l4.4-4.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  <span class="m-zone-text">Drop a file here to attach it</span>
+                  <button class="m-attach-btn" id="attach-sel" type="button" disabled>Attach selected</button>
+                </div>
+              </div>
+              <footer class="m-foot"><button class="m-send" type="button" disabled aria-disabled="true" title="This is a demo">Send</button></footer>
+            </section>
+              <div class="win win-finder" id="win-finder" role="dialog" aria-label="Finder, Desktop" hidden>
+                <header class="w-bar"><span class="lights"><button class="tl tl-close" type="button" aria-label="Close Finder"></button><button class="tl tl-min" type="button" aria-label="Minimise Finder"></button><button class="tl tl-zoom" type="button" aria-label="Zoom Finder" tabindex="-1"></button></span><span class="w-title">Desktop</span></header>
+                <div class="fi-body"><ul class="fi-side" aria-hidden="true"><li>Favourites</li><li class="on">Desktop</li><li>Documents</li><li>Downloads</li></ul><ul class="fi-list" id="fi-list"></ul></div>
+              </div>
+              <div class="win win-term" id="win-term" role="dialog" aria-label="Terminal" hidden>
+                <header class="w-bar"><span class="lights"><button class="tl tl-close" type="button" aria-label="Close Terminal"></button><button class="tl tl-min" type="button" aria-label="Minimise Terminal"></button><button class="tl tl-zoom" type="button" aria-label="Zoom Terminal" tabindex="-1"></button></span><span class="w-title">Terminal</span></header>
+                <pre class="t-body" id="t-body" aria-live="polite"></pre>
+              </div>
+              <div class="win win-air" id="win-air" role="dialog" aria-label="AirDrop" hidden>
+                <header class="a-head"><b>AirDrop</b><button class="w-x" type="button" aria-label="Close AirDrop">×</button></header>
+                <div class="a-file" id="a-file"></div>
+                <div class="a-dev"><span class="a-avatar" aria-hidden="true">A</span><span class="a-name">Anna’s iPhone</span><span class="a-state" id="a-state">Waiting</span></div>
+              </div>
+
+          </div>
+
+          <nav class="appdock" id="appdock" aria-label="Dock">
+            <div class="ad-bar" id="ad-bar">
+              <button class="dk-i" type="button" data-app="finder" aria-label="Finder"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="14" fill="url(#ap-blue)"/><path d="M14 24a5 5 0 0 1 5-5h9l4 4h13a5 5 0 0 1 5 5v15a5 5 0 0 1-5 5H19a5 5 0 0 1-5-5z" fill="#fff" fill-opacity=".95"/><path d="M14 31h36" stroke="#4c9fee" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+              <button class="dk-i" type="button" data-app="mail" aria-label="Mail"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="14" fill="url(#ap-sky)"/><rect x="13" y="19" width="38" height="27" rx="5" fill="#fff"/><path d="M15 23l17 13 17-13" fill="none" stroke="#5aa8f5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button class="dk-i" type="button" data-app="compass" aria-label="Browser"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="14" fill="url(#ap-teal)"/><circle cx="32" cy="32" r="17" fill="#fff"/><path d="M39.5 24.5l-5 11-11 5 5-11z" fill="#ff6a5f"/><path d="M23.5 40.5l5-11 11-5" fill="none" stroke="#2b3345" stroke-width="0" /><circle cx="32" cy="32" r="2" fill="#2b3345"/></svg></button>
+              <button class="dk-i" type="button" data-app="photos" aria-label="Photos"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="14" fill="#fff"/><circle cx="25" cy="27" r="11" fill="#ff6a5f" fill-opacity=".8"/><circle cx="39" cy="27" r="11" fill="#ffc04d" fill-opacity=".8"/><circle cx="32" cy="39" r="11" fill="#4aa3ff" fill-opacity=".8"/></svg></button>
+              <button class="dk-i" type="button" data-app="terminal" aria-label="Terminal"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="14" fill="#1c1f2b"/><path d="M17 24l9 8-9 8" fill="none" stroke="#7fe3a3" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 41h14" stroke="#e9e9ec" stroke-width="3.4" stroke-linecap="round"/></svg></button>
+              <span class="ad-sep" aria-hidden="true"></span>
+              <button class="dk-i" type="button" data-app="trash" id="dk-trash" aria-label="Trash"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="14" fill="url(#ap-glass)"/><path d="M21 24h22l-2 22a4 4 0 0 1-4 3.6H27a4 4 0 0 1-4-3.6z" fill="#fff" fill-opacity=".92"/><rect x="18" y="20" width="28" height="4.4" rx="2.2" fill="#fff"/><rect x="27" y="16" width="10" height="4.4" rx="2" fill="#fff"/><path d="M28 29v14M32 29v14M36 29v14" stroke="#a9b0c0" stroke-width="2" stroke-linecap="round"/></svg></button>
+            </div>
+          </nav>
+
+          <div class="overlay" id="overlay">
+            <div class="rcard" id="rcard" role="group" aria-label="Result" hidden></div>
+            <div class="toast" id="toast" hidden></div>
+
+            <div class="coach" id="coach" aria-hidden="true">
+              <div class="co-card">
+                <div class="co-head"><span class="co-title" id="co-title">Now tap a key</span><span class="co-sub" id="co-sub">Keep holding the file</span></div>
+                <div class="co-keys" id="co-keys">
+                  <button class="ck" type="button" tabindex="-1" data-mode="convert"><span class="ck-cap">⇧</span><span class="ck-name">Convert</span><span class="ck-key">Shift</span></button>
+                  <button class="ck" type="button" tabindex="-1" data-mode="tools"><span class="ck-cap">⌘</span><span class="ck-name">Tools</span><span class="ck-key">Command</span></button>
+                  <button class="ck" type="button" tabindex="-1" data-mode="actions"><span class="ck-cap">⌃</span><span class="ck-name">Actions</span><span class="ck-key">Control</span></button>
+                </div>
+                <ol class="co-steps" id="co-steps"><li class="is-done"><i></i>Drag</li><li class="is-now"><i></i>Tap a key</li><li><i></i>Drop on a wedge</li></ol>
+              </div>
+            </div>
+            <div class="dock" id="dock" aria-hidden="true">
+              <p class="dk-text">Tap <kbd>⇧</kbd> <kbd>⌘</kbd> <kbd>⌃</kbd> with a second finger</p>
+              <div class="dk-keys">
+                <button class="ck dk" type="button" tabindex="-1" data-mode="convert"><span class="ck-cap">⇧</span><span class="ck-name">Convert</span></button>
+                <button class="ck dk" type="button" tabindex="-1" data-mode="tools"><span class="ck-cap">⌘</span><span class="ck-name">Tools</span></button>
+                <button class="ck dk" type="button" tabindex="-1" data-mode="actions"><span class="ck-cap">⌃</span><span class="ck-name">Actions</span></button>
+              </div>
+            </div>
+
+            <div class="wbox" id="wbox">
+              <div class="wbox-in">
+                <div class="wheel" id="wheel">
+                  <div class="wheel-shadow" aria-hidden="true"><div></div></div>
+                  <div class="wheel-glass" aria-hidden="true"></div>
+                  <svg class="wheel-svg" viewBox="0 0 400 400" role="group" id="wheel-svg" aria-label="Wheel">
+                    <defs>
+                      <linearGradient id="wfill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" class="wf-a"/>
+                        <stop offset="1" class="wf-b"/>
+                      </linearGradient>
+                    </defs>
+                    <g id="wedges"></g>
+                  </svg>
+                  <div class="core" id="core" aria-hidden="true">
+                    <div class="core-fit" id="core-fit">
+                      <div class="core-title" id="core-title">Convert</div>
+                      <div class="core-sub" id="core-sub">Drop on a wedge</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wcard" id="wcard">
+                  <span class="wc-icon" id="wc-icon" aria-hidden="true"></span>
+                  <span class="wc-file"><span class="wc-name" id="wc-name">holiday.heic</span><span class="wc-meta" id="wc-meta"></span></span>
+                  <span class="wc-sep" aria-hidden="true"></span>
+                  <span class="wc-out is-idle" id="wc-out"><span class="wc-label" id="wc-label">Saves as</span><span class="wc-res" id="wc-res">Pick a wedge</span></span>
+                </div>
+                <div class="modes" id="modes" role="group" aria-label="Wheel">
+                  <button class="mode" type="button" data-mode="convert" aria-pressed="true"><span class="key" aria-hidden="true">⇧</span>Convert</button>
+                  <button class="mode" type="button" data-mode="tools" aria-pressed="false"><span class="key" aria-hidden="true">⌘</span>Tools</button>
+                  <button class="mode" type="button" data-mode="actions" aria-pressed="false"><span class="key" aria-hidden="true">⌃</span>Actions</button>
+                </div>
+                <div class="wheel-tip" id="wheel-tip" aria-hidden="true"><span class="wt-dots"><i class="on"></i><i class="on"></i><i></i></span><span>Move onto a wedge, then let go</span></div>
+              </div>
+            </div>
+          </div>
+          <noscript><p class="noscript-note">The interactive desktop needs JavaScript.</p></noscript>
+        </div>
+
+        <p class="kbd-hint">Drag a file, tap a key to choose the wheel, then drop it on a wedge: <kbd>⇧</kbd> Convert · <kbd>⌘</kbd> Tools · <kbd>⌃</kbd> Control.</p>
+        <p class="kbd-hint kbd-sub">Keyboard only: focus a file and press <kbd>Enter</kbd>, like Enter on a selection in the app. Arrow keys move, <kbd>Enter</kbd> runs, <kbd>Esc</kbd> closes.</p>
+        <p class="sr-only" id="live" role="status" aria-live="polite"></p>
+
+        <div class="accent" role="radiogroup" aria-label="Accent colour">
+          <button class="swatch" type="button" role="radio" aria-checked="true" data-accent="tangerine" aria-label="Tangerine"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="coral" aria-label="Coral"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="rose" aria-label="Rose"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="violet" aria-label="Violet"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="indigo" aria-label="Indigo"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="azure" aria-label="Azure"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="teal" aria-label="Teal"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="green" aria-label="Green"></button>
+          <button class="swatch" type="button" role="radio" aria-checked="false" data-accent="graphite" aria-label="Graphite"></button>
+        </div>
+        <p class="accent-caption">Accent: <strong id="accent-name">Tangerine</strong>. Petal ships with nine to choose from.</p>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="how-title">Three steps, no windows.</h2>
+          <p class="sub">There is nothing to open. Petal waits in the menu bar until you start dragging.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <div class="step-art" aria-hidden="true">
+              <svg viewBox="0 0 160 120" focusable="false">
+                <rect x="36" y="14" width="64" height="82" rx="11" class="s-file"/>
+                <path d="M78 14v19a5 5 0 0 0 5 5h17" class="s-fold"/>
+                <rect x="48" y="52" width="40" height="5" rx="2.5" class="s-line"/>
+                <rect x="48" y="64" width="30" height="5" rx="2.5" class="s-line"/>
+                <path d="M100 66l31 14-13 4-5 13z" class="s-cursor"/>
+              </svg>
+            </div>
+            <h3>Drag a file</h3>
+            <p>Pick up a file anywhere: Finder, the Desktop, or any app that lets you drag one out.</p>
+          </li>
+          <li class="step">
+            <div class="step-art" aria-hidden="true">
+              <div class="keys"><span class="keycap on">⇧</span><span class="keycap">⌘</span><span class="keycap">⌃</span></div>
+            </div>
+            <h3>Tap a key</h3>
+            <p>While you drag, tap Shift, Command or Control. A wheel opens under the cursor. The keys are configurable.</p>
+          </li>
+          <li class="step">
+            <div class="step-art" aria-hidden="true">
+              <svg viewBox="0 0 160 120" focusable="false">
+                <g transform="translate(80 60)">
+                  <g class="s-petal">
+                    <rect id="pt" x="-9" y="-50" width="18" height="30" rx="9"/>
+                    <use href="#pt" transform="rotate(45)" class="s-petal-on"/>
+                    <use href="#pt" transform="rotate(90)"/>
+                    <use href="#pt" transform="rotate(135)"/>
+                    <use href="#pt" transform="rotate(180)"/>
+                    <use href="#pt" transform="rotate(225)"/>
+                    <use href="#pt" transform="rotate(270)"/>
+                    <use href="#pt" transform="rotate(315)"/>
+                  </g>
+                  <circle r="6" class="s-dot"/>
+                </g>
+              </svg>
+            </div>
+            <h3>Drop it on a wedge</h3>
+            <p>The result is saved next to the original as a new copy. Nothing is ever overwritten.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="wheels" aria-labelledby="wheels-title">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="wheels-title">Three wheels. One for each job.</h2>
+          <p class="sub">Each wheel shows what makes sense for the file in your hand. It learns the formats you reach for most and puts them first, and you can set the order yourself.</p>
+        </div>
+        <div class="wheels">
+          <article class="wheel-col">
+            <div class="keycap big" aria-hidden="true">⇧</div>
+            <h3>Convert</h3>
+            <p class="kicker">Tap Shift</p>
+            <p>Change a file into another format. Photos, video, audio, PDFs, documents, spreadsheets, subtitles and archives.</p>
+            <p class="ex">JPG to PNG or WebP. MOV to MP4 or GIF. WAV to M4A. PDF to DOCX. XLSX to CSV. ZIP to TAR.GZ.</p>
+          </article>
+          <article class="wheel-col">
+            <div class="keycap big" aria-hidden="true">⌘</div>
+            <h3>Tools</h3>
+            <p class="kicker">Tap Command</p>
+            <p>Work on the file itself: shrink it, tidy it, pull something out of it. Small editor windows cover cropping a photo and trimming audio or video.</p>
+            <p class="ex">Compress, resize, remove background, copy text from an image, rotate, flip, black and white, strip metadata, split, merge or rotate a PDF, mute video, make a GIF, extract audio, checksum, size, zip.</p>
+          </article>
+          <article class="wheel-col">
+            <div class="keycap big" aria-hidden="true">⌃</div>
+            <h3>Actions</h3>
+            <p class="kicker">Tap Control</p>
+            <p>Send the file somewhere, or keep it close at hand, without leaving what you are doing.</p>
+            <p class="ex">AirDrop, Copy, Copy path, Move to…, Copy to…, Open in Terminal, Float to keep the file on screen, Show in Finder.</p>
+          </article>
+        </div>
+        <p class="note-line">After every job a small card appears. Drag the result straight out of it, or show it in Finder.</p>
+      </div>
+    </section>
+
+    <section class="section" id="formats" aria-labelledby="formats-title">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="formats-title">The formats you actually meet.</h2>
+          <p class="sub">What you can convert to depends on what you drop. Here is what Petal covers.</p>
+        </div>
+        <dl class="formats">
+          <div class="frow">
+            <dt>Images</dt>
+            <dd>
+              <ul class="chips"><li>JPG</li><li>PNG</li><li>HEIC</li><li>AVIF</li><li>WebP</li><li>TIFF</li><li>GIF</li><li>BMP</li><li>JPEG 2000</li><li>ICO</li><li>ICNS</li><li>TGA</li><li>PSD</li></ul>
+              <p class="aside">RAW and SVG files can be opened as input.</p>
+            </dd>
+          </div>
+          <div class="frow">
+            <dt>Video</dt>
+            <dd><ul class="chips"><li>MP4</li><li>MOV</li><li>MKV</li><li>WebM</li><li>AVI</li><li>WMV</li><li>GIF</li></ul></dd>
+          </div>
+          <div class="frow">
+            <dt>Audio</dt>
+            <dd><ul class="chips"><li>M4A</li><li>MP3</li><li>WAV</li><li>FLAC</li><li>AIFF</li><li>OGG</li><li>Opus</li><li>WMA</li></ul></dd>
+          </div>
+          <div class="frow">
+            <dt>PDF</dt>
+            <dd>
+              <ul class="chips"><li>DOCX</li><li>PPTX</li><li>XLSX</li><li>EPUB</li><li>Markdown</li><li>TXT</li><li>JPG</li><li>PNG</li></ul>
+              <p class="aside">PDFs convert to these formats.</p>
+            </dd>
+          </div>
+          <div class="frow">
+            <dt>Documents</dt>
+            <dd><ul class="chips"><li>DOCX</li><li>EPUB</li><li>Markdown</li><li>HTML</li><li>RTF</li><li>ODT</li><li>TXT</li><li>PDF</li></ul></dd>
+          </div>
+          <div class="frow">
+            <dt>Spreadsheets</dt>
+            <dd><ul class="chips"><li>XLSX</li><li>ODS</li><li>CSV</li><li>TSV</li><li>JSON</li><li>PDF</li></ul></dd>
+          </div>
+          <div class="frow">
+            <dt>Subtitles</dt>
+            <dd><ul class="chips"><li>SRT</li><li>VTT</li><li>TXT</li></ul></dd>
+          </div>
+          <div class="frow">
+            <dt>Archives</dt>
+            <dd>
+              <ul class="chips"><li>ZIP</li><li>TAR</li><li>TAR.GZ</li><li>GZIP</li></ul>
+              <p class="aside">7Z and RAR archives can be opened.</p>
+            </dd>
+          </div>
+          <div class="frow">
+            <dt>Slides</dt>
+            <dd>
+              <ul class="chips"><li>PDF</li><li>JPG</li><li>PNG</li></ul>
+              <p class="aside">From PPT, PPTX and Keynote. Slides, Pages documents and old XLS files go through the free Keynote, Pages and Numbers apps, if they are installed.</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="band" id="privacy" aria-labelledby="privacy-title">
+      <div class="wrap">
+        <h2 id="privacy-title">Your files never leave your Mac.</h2>
+        <p class="band-lede">Petal does its work on the computer in front of you. There is no server on the other end.</p>
+        <div class="facts">
+          <div>
+            <h3>Nothing is uploaded</h3>
+            <p>Conversion, text recognition, background removal and every other tool run on your Mac, and they work without a network connection.</p>
+          </div>
+          <div>
+            <h3>No account</h3>
+            <p>There is nothing to sign up for and nothing to sign in to. Download it, open it, drag a file.</p>
+          </div>
+          <div>
+            <h3>No analytics, no tracking</h3>
+            <p>Petal does not measure what you do or what you convert, and it does not record what you type.</p>
+          </div>
+        </div>
+        <a class="band-link" href="privacy.html">Read the privacy policy</a>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <div class="head left">
+          <h2 id="faq-title">Questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Does Petal work offline?</summary>
+            <p>Yes. Everything happens on your Mac, so no connection is needed. Petal does not make network connections.</p>
+          </details>
+          <details>
+            <summary>What about slides, Pages documents and old Excel files?</summary>
+            <p>PPT, PPTX and Keynote files can be turned into PDF, JPG or PNG, and Pages documents and old XLS spreadsheets can be read, by asking Apple’s free Keynote, Pages and Numbers apps to do the work. Install the ones you need.</p>
+          </details>
+          <details>
+            <summary>What do I need to grant?</summary>
+            <p>Nothing special. Petal watches mouse drags and the modifier keys, which macOS allows without a permission prompt, and it never records typing. If you use Keynote, Pages, Numbers or Open in Terminal, macOS may ask once whether Petal can control that app.</p>
+          </details>
+          <details>
+            <summary>How does the wheel learn my order?</summary>
+            <p>Petal notices which formats and tools you pick for each kind of file and moves the ones you use most to the front of the wheel. You can also arrange the order yourself.</p>
+          </details>
+          <details>
+            <summary>Where do my results go?</summary>
+            <p>Next to the original, as a new copy, unless you choose another folder. Petal never overwrites a file; if the name is taken it adds a number.</p>
+          </details>
+          <details>
+            <summary>Can I change the keys?</summary>
+            <p>Yes. Shift, Command and Control are the defaults for Convert, Tools and Actions, and you can assign others. The size of the wheel (S or M) and the accent colour are settings too.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="download" aria-labelledby="download-title">
+      <div class="wrap narrow">
+        <div class="dl">
+          <img class="dl-icon" src="assets/icon.png" width="112" height="112" alt="" loading="lazy">
+          <div class="dl-main">
+            <h2 id="download-title">Download Petal</h2>
+            <p class="sub">A direct download, as a disk image. Open it and drag Petal to your Applications folder. It lives in the menu bar.</p>
+            <a class="btn btn-primary" href="downloads/Petal-0.1.0.dmg" data-download download>Download for Mac</a>
+          </div>
+        </div>
+        <dl class="specs">
+          <div><dt>Version</dt><dd data-release="version">0.1.0</dd></div>
+          <div><dt>File</dt><dd data-release="filename">Petal-0.1.0.dmg</dd></div>
+          <div><dt>Size</dt><dd data-release="size">11 MB</dd></div>
+          <div><dt>Requires</dt><dd data-release="requires">macOS 15 or later · Apple silicon</dd></div>
+          <div class="spec-wide">
+            <dt>SHA-256</dt>
+            <dd class="sha"><code data-release="sha256">f1b59a24898d6bc995dda921965290bd84d67aad8d69d8eeab4b88cf3575f1fe</code><button class="copy" type="button" data-copy>Copy</button></dd>
+          </div>
+        </dl>
+        <p class="fine left" data-unnotarized hidden><strong>First launch.</strong> This build isn't notarized by Apple yet, so macOS will say it can't verify the developer. Click <em>Done</em>, open <em>System Settings → Privacy &amp; Security</em>, scroll down and choose <em>Open Anyway</em>. You only need to do this once.</p>
+        <p class="fine left">To check the download, run <code>shasum -a 256 <span data-release="filename">Petal-0.1.0.dmg</span></code> in Terminal and compare the result with the SHA-256 above.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-top">
+        <a class="brand" href="#top"><img src="assets/icon.svg" width="22" height="22" alt=""><span>Petal</span></a>
+        <ul class="foot-links">
+          <li><a href="#download">Download</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="licenses.html">Open-source licenses</a></li>
+          <li><a href="https://github.com/LucaLivigni/Petal">Source code</a></li>
+        </ul>
+      </div>
+      <p>Petal includes open-source components, among them FFmpeg under the LGPL, which runs as a separate program. <a href="licenses.html">See the licenses</a>.</p>
+      <p>Mac, macOS, Keynote, Pages, Numbers, AirDrop and Finder are trademarks of Apple Inc. Petal is an independent app and is not affiliated with Apple.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

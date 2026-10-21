@@ -1,0 +1,3 @@
+// Copy to Local.xcconfig (ignored by git) and adjust. A stable identity also keeps macOS's per-app permissions
+// (for example Automation for Keynote / Pages / Numbers) across rebuilds.
+CODE_SIGN_IDENTITY = Apple Development: Your Name (TEAMID)

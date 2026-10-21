@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" data-accent="tangerine">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Open-source licenses – Petal</title>
+  <meta name="description" content="Petal includes open-source components, including FFmpeg under the LGPL, built without GPL parts and bundled as a separate program.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="top-sentinel" aria-hidden="true"></div>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Petal, home">
+        <img src="assets/icon.svg" width="26" height="26" alt="">
+        <span>Petal</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#wheels">Wheels</a></li>
+          <li><a href="index.html#formats">Formats</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="downloads/Petal-0.1.0.dmg" data-download download>Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="doc">
+      <div class="wrap narrow">
+        <h1>Open-source licenses</h1>
+        <p class="intro">Petal is built on some excellent open-source software. Here is what is inside, and under which terms.</p>
+
+        <h2>FFmpeg, and how it is bundled</h2>
+        <p>Petal includes FFmpeg to read and write formats the Mac does not handle on its own: MP3, WebM, MKV, AVI, WMV, OGG, Opus, WMA and WebP, among others. FFmpeg is a separate program inside the app, not part of Petal’s own code. Petal starts it as its own process and is not linked against it.</p>
+        <p>The FFmpeg in Petal is built without any GPL parts (<code>--disable-gpl --disable-nonfree</code>), so it is licensed under the GNU Lesser General Public License, version 2.1 or later. H.264 and HEVC use Apple’s VideoToolbox rather than x264 or x265.</p>
+
+        <h2>Components</h2>
+        <div class="parts">
+          <div class="part"><h3>FFmpeg</h3><p><span class="lic">LGPL 2.1 or later.</span> A complete, cross-platform solution to record, convert and stream audio and video. ffmpeg.org</p></div>
+          <div class="part"><h3>LAME</h3><p><span class="lic">LGPL.</span> MP3 encoder, linked into FFmpeg.</p></div>
+          <div class="part"><h3>libvorbis and libogg</h3><p><span class="lic">BSD-style license.</span> Ogg Vorbis audio, from Xiph.Org, linked into FFmpeg.</p></div>
+          <div class="part"><h3>Opus</h3><p><span class="lic">BSD-style license.</span> The Opus audio codec, from Xiph.Org, linked into FFmpeg.</p></div>
+          <div class="part"><h3>libvpx</h3><p><span class="lic">BSD-style license.</span> VP8 and VP9 video, from the WebM Project, linked into FFmpeg.</p></div>
+          <div class="part"><h3>libwebp</h3><p><span class="lic">BSD-style license.</span> WebP images, from the WebM Project. Also provides the separate <code>cwebp</code> program that Petal includes.</p></div>
+          <div class="part"><h3>libpng</h3><p><span class="lic">libpng license.</span> PNG reference library, linked into FFmpeg.</p></div>
+        </div>
+
+        <h2>Source code and license texts</h2>
+        <p>The full license texts and a list of the exact source archives used for each component are included in every copy of the app, inside <code>Petal.app/Contents/Resources/Engines/licenses</code>. That folder is also your offer of the corresponding source for the LGPL components. If you want to build your own versions, those archives are the official releases from each project, and the script that builds them, <code>tools/build-engines.sh</code>, is in <a href="https://github.com/LucaLivigni/Petal">Petal's source repository</a>.</p>
+        <p>Petal's own source code is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. The name Petal and the app icon are not covered by that license.</p>
+
+        <h2>macOS frameworks</h2>
+        <p>Much of what Petal does uses the frameworks that come with macOS, such as Core Image, PDFKit, AVFoundation and VideoToolbox. Those are part of your Mac and are not redistributed with Petal.</p>
+
+        <p class="updated">Applies to Petal 0.1.0.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-top">
+        <a class="brand" href="index.html"><img src="assets/icon.svg" width="22" height="22" alt=""><span>Petal</span></a>
+        <ul class="foot-links">
+          <li><a href="index.html#download">Download</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="licenses.html">Open-source licenses</a></li>
+        </ul>
+      </div>
+      <p>Petal includes open-source components, among them FFmpeg under the LGPL, which runs as a separate program. <a href="licenses.html">See the licenses</a>.</p>
+      <p>Mac, macOS, Keynote, Pages, Numbers, AirDrop and Finder are trademarks of Apple Inc. Petal is an independent app and is not affiliated with Apple.</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

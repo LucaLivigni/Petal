@@ -1,0 +1,7 @@
+// Build settings shared by every configuration.
+//
+// Petal builds ad hoc ("-") out of the box. To sign with your own certificate, copy Local.xcconfig.example to
+// Local.xcconfig (git-ignored) and put your identity in it; it is picked up below.
+CODE_SIGN_IDENTITY = -
+
+#include? "Local.xcconfig"

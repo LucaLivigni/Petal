@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-accent="tangerine">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy – Petal</title>
+  <meta name="description" content="Petal runs entirely on your Mac. Nothing is uploaded, there is no account, and there are no analytics or tracking.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="top-sentinel" aria-hidden="true"></div>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Petal, home">
+        <img src="assets/icon.svg" width="26" height="26" alt="">
+        <span>Petal</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#wheels">Wheels</a></li>
+          <li><a href="index.html#formats">Formats</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="downloads/Petal-0.1.0.dmg" data-download download>Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="doc">
+      <div class="wrap narrow">
+        <h1>Privacy</h1>
+        <p class="intro">Your files never leave your Mac. Petal has no server, no account and no analytics.</p>
+
+        <h2>The app</h2>
+        <p>Petal does its work on your computer. When you drop a file on a wedge, the conversion or tool runs locally, and the result is saved next to the original, or in a folder you chose.</p>
+        <ul class="plain">
+          <li><strong>Nothing is uploaded.</strong> Your files, their names and their contents are never sent anywhere. Petal makes no network connections, so it also works offline.</li>
+          <li><strong>No account.</strong> There is nothing to sign up for or sign in to.</li>
+          <li><strong>No analytics and no tracking.</strong> Petal does not measure how you use it and does not collect identifiers.</li>
+          <li><strong>No keystroke recording.</strong> To know when you tap a key during a drag, Petal reads the state of the modifier keys (Shift, Command, Control). It never records what you type.</li>
+        </ul>
+
+        <h2>What stays on your Mac</h2>
+        <p>Petal keeps its own settings on your Mac: the keys you picked, the accent colour, the wheel size, the order of formats and which ones you use most. The usage counts that let the wheel put your favourite formats first never leave the device.</p>
+
+        <h2>Other apps Petal can use</h2>
+        <p>Slides, Pages documents and old Excel files are converted by asking Apple’s Keynote, Pages and Numbers, if you have them installed. Petal does this through macOS, and macOS asks you once whether to allow it. Open in Terminal works the same way. Those apps are governed by Apple’s own privacy policies, and the files stay on your Mac.</p>
+
+        <h2>This website</h2>
+        <p>This site is a set of static pages. It runs no analytics, sets no cookies and loads no fonts, scripts or images from other sites. The server that hosts the files may keep ordinary access logs, as web servers usually do.</p>
+
+        <p class="updated">Applies to Petal 0.1.0.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-top">
+        <a class="brand" href="index.html"><img src="assets/icon.svg" width="22" height="22" alt=""><span>Petal</span></a>
+        <ul class="foot-links">
+          <li><a href="index.html#download">Download</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="licenses.html">Open-source licenses</a></li>
+        </ul>
+      </div>
+      <p>Petal includes open-source components, among them FFmpeg under the LGPL, which runs as a separate program. <a href="licenses.html">See the licenses</a>.</p>
+      <p>Mac, macOS, Keynote, Pages, Numbers, AirDrop and Finder are trademarks of Apple Inc. Petal is an independent app and is not affiliated with Apple.</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

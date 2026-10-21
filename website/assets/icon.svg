@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100 824 824" width="512" height="512" role="img" aria-label="Petal">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffbd4d"/>
+      <stop offset="1" stop-color="#ff6609"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="512" cy="144" r="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".98"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#992e00" flood-opacity=".38"/>
+    </filter>
+    <clipPath id="tile"><rect x="100" y="100" width="824" height="824" rx="186"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect x="100" y="100" width="824" height="824" fill="url(#bg)"/>
+    <rect x="100" y="100" width="824" height="824" fill="url(#glow)"/>
+  </g>
+  <g filter="url(#soft)" fill="url(#petal)">
+    <rect id="p" x="450" y="180" width="124" height="214" rx="62"/>
+    <use href="#p" transform="rotate(45 512 512)"/>
+    <use href="#p" transform="rotate(90 512 512)"/>
+    <use href="#p" transform="rotate(135 512 512)"/>
+    <use href="#p" transform="rotate(180 512 512)"/>
+    <use href="#p" transform="rotate(225 512 512)"/>
+    <use href="#p" transform="rotate(270 512 512)"/>
+    <use href="#p" transform="rotate(315 512 512)"/>
+  </g>
+  <circle cx="512" cy="512" r="46" fill="#fff" fill-opacity=".95"/>
+</svg>
